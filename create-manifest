@@ -4,16 +4,16 @@ DOCKER_ORG=samip537
 DOCKER_IMAGE=pdns-slave
 
 	docker manifest create --amend $DOCKER_ORG/$DOCKER_IMAGE \
-	      $DOCKER_ORG/$DOCKER_IMAGE:arm32v7 \
+	      $DOCKER_ORG/$DOCKER_IMAGE:amd64 \
 	      $DOCKER_ORG/$DOCKER_IMAGE:arm64v8
 
 	docker manifest annotate $DOCKER_ORG/$DOCKER_IMAGE \
 			$DOCKER_ORG/$DOCKER_IMAGE:amd64 \
 			--os linux --arch amd64
 
-	docker manifest annotate $DOCKER_ORG/$DOCKER_IMAGE \
-			$DOCKER_ORG/$DOCKER_IMAGE:arm32v7 \
-			--os linux --arch arm --variant v7
+#	docker manifest annotate $DOCKER_ORG/$DOCKER_IMAGE \
+#			$DOCKER_ORG/$DOCKER_IMAGE:arm32v7 \
+#			--os linux --arch arm --variant v7
 
 	docker manifest annotate $DOCKER_ORG/$DOCKER_IMAGE \
 			$DOCKER_ORG/$DOCKER_IMAGE:arm64v8 \
