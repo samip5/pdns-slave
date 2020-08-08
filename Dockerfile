@@ -1,5 +1,5 @@
 ARG ARCH=${BUILD_ARCH}
-FROM debian:stretch-slim/${BUILD_ARCH}
+FROM ${BUILD_ARCH}/debian:stretch-slim
 ENV DEBIAN_FRONTEND noninteractive
 RUN apt-get update && \
 	apt-get -y install pdns-server pdns-backend-sqlite3 && \
