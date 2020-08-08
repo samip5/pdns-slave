@@ -1,4 +1,4 @@
-FROM debian:wheezy
+FROM debian:stretch-slim
 ENV DEBIAN_FRONTEND noninteractive
 RUN apt-get update && \
 	apt-get -y install pdns-server pdns-backend-sqlite3 && \
